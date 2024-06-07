@@ -54,6 +54,65 @@ public class RestaurantsController : Controller
         return View(restaurant);
     }
 
+
+
+    [HttpGet]
+    [Authorize]
+    public IActionResult CreateReview(int restaurantId)
+    {
+        var restaurant = _context.Restaurants.FirstOrDefault(r => r.RestaurantId == restaurantId);
+
+        if (restaurant == null)
+        {
+            return NotFound();
+        }
+
+        var reviewViewModel = new ReviewViewModel
+        {
+            RestaurantId = restaurant.RestaurantId,
+            RestaurantName = restaurant.Name
+        };
+
+        return View(reviewViewModel);
+    }
+
+
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    [Authorize]
+    public async Task<IActionResult> CreateReview(ReviewViewModel review)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View(review);
+        }
+
+        // Pobierz użytkownika i sprawdź, czy istnieje
+        var userId = _userManager.GetUserId(User);
+        if (userId == null)
+        {
+            return NotFound("Nie znaleziono użytkownika.");
+        }
+
+        var newReview = new Review
+        {
+            RestaurantId = review.RestaurantId,
+            Rating = review.Rating,
+            Comment = review.Comment,
+            UserId = userId
+        };
+
+        _context.Add(newReview);
+        await _context.SaveChangesAsync();
+        return RedirectToAction("Details", new { id = review.RestaurantId });
+    }
+
+
+
+
+
+
     public async Task<IActionResult> Details(int? id)
     {
         if (id == null)
