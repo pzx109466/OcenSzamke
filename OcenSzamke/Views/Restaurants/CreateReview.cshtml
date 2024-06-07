@@ -1,0 +1,25 @@
+﻿@model OcenSzamke.Models.ReviewViewModel
+
+<h2>Dodaj recenzję dla @Model.RestaurantName</h2>
+
+<form asp-action="CreateReview" method="post">
+    <input type="hidden" asp-for="RestaurantId" />
+    <div class="form-group">
+        <label asp-for="Rating">Ocena</label>
+        <select asp-for="Rating" class="form-control">
+            <option value="">Wybierz ocenę</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <span asp-validation-for="Rating" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Comment">Komentarz</label>
+        <textarea asp-for="Comment" class="form-control"></textarea>
+        <span asp-validation-for="Comment" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Dodaj recenzję</button>
+</form>

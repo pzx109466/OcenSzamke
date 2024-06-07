@@ -1,0 +1,12 @@
+﻿@model OcenSzamke.Models.Restaurant
+
+<h1>Usuń restaurację</h1>
+<h3>Czy jesteś pewien, że chcesz usunąć restaurację: @Model.Name?</h3>
+
+<form asp-controller="Restaurants" asp-action="DeleteConfirmed" asp-route-id="@Model.RestaurantId" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="RestaurantId" />
+    <button type="submit" class="btn btn-danger">Usuń</button>
+    @Html.ActionLink("Anuluj", "Index", null, new { @class = "btn btn-default" })
+</form>
+

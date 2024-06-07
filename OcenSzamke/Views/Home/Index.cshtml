@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Strona Główna";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Witaj w OcenSzamke!</h1>
+    <p>Odkrywaj najlepsze restauracje i dziel się swoimi opiniami.</p>
+
+    @if (User?.Identity?.IsAuthenticated != true)
+    {
+        <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-primary">Zaloguj się</a>
+        <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-secondary">Zarejestruj się</a>
+    }
+    <a asp-action="Index" asp-controller="Restaurants" class="btn btn-success">Przeglądaj restauracje</a>
+    @if (User?.Identity?.IsAuthenticated == true)
+    {
+        <form method="post" asp-area="Identity" asp-page="/Account/Logout" asp-handler="Logout" asp-route-returnUrl="/">
+            <button type="submit" class="btn btn-warning">Wyloguj</button>
+        </form>
+    }
+
+
+</div>
+
+
+
