@@ -1,22 +1,502 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #3b3b3b;
+}
+
+.navbar-custom {
+    background-color: #e6ac00;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 0 3px #e6ac00, 0 0 2px #ffffff;
+}
+
+/* Dodajemy animacjê lewitacji dla logo */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.logo {
+    animation: float 3s ease-in-out infinite;
+    height: 250px; /* Wiêkszy rozmiar logo */
+    width: auto;
+    margin-bottom: 20px;
+}
+
+/* Stylizacja przycisków */
+.btn-custom {
+    background-color: #e6ac00;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 5px; /* Dostosowanie marginesów */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+    .btn-custom:hover {
+        background-color: #3b3b3b;
+        color: white;
+        border: 2px solid #3b3b3b;
+    }
+
+/* Ustawienia dla ca³ej strony */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Zapobiegamy przewijaniu */
+}
+
+/* Stylizacja sekcji centralnej z t³em */
+.centered-section, .register-container, .login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 40px); /* Ustawiamy wysokoœæ na 100vh minus wysokoœæ stopki */
+    text-align: center;
+    width: 100%; /* Szerokoœæ na 100% kontenera */
+    margin: 0; /* Usuniêcie marginesów */
+}
+
+    .centered-section::before, .register-container::before, .login-container::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/img/bekgrond.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        filter: blur(5px) grayscale(0.9) brightness(70%); /* Opcjonalne: rozmycie t³a */
+    }
+
+.footer {
+    background-color: #3b3b3b;
+    width: 100%;
+    padding: 0.5rem 0; /* Zmniejszony padding */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 0.8rem; /* Mniejsza czcionka, jeœli potrzebne */
+    height: 40px; /* Ustawienie wysokoœci */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* Uwzglêdnienie paddingu i borderów w szerokoœci i wysokoœci */
+    border-top: 1px solid transparent; /* Dodanie przezroczystej krawêdzi, aby naprawiæ potencjalne problemy z renderowaniem */
+}
+
+.display-4 {
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 0 3px #e6ac00, 0 0 5px #ff0000;
+}
+
+.descriptionofmainpage {
+    color: white;
+    text-shadow: 0 0 5px #000000;
+}
+
+/* Stylizacja grupy przycisków */
+.btn-group-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-group-horizontal {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+    .btn-group-horizontal .btn-custom {
+        flex: 1;
+        margin: 10px 5px;
+    }
+
+.btn-block {
+    width: 100%; /* Zapewnia, ¿e przyciski zajmuj¹ pe³n¹ szerokoœæ dostêpnego miejsca */
+}
+
+/* Stylizacja formularza rejestracyjnego */
+.register-form {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 100%;
+}
+
+    .register-form h2, .register-form hr, .register-form label {
+        color: white;
+    }
+
+    .register-form .form-control {
+        background-color: #2b2b2b;
+        color: white;
+        border: 1px solid #555;
+    }
+
+        .register-form .form-control:focus {
+            background-color: #2b2b2b;
+            color: white;
+            border-color: #e6ac00;
+        }
+
+    .register-form .btn-primary {
+        background-color: #e6ac00;
+        border: none;
+        transition: background-color 0.3s;
+    }
+
+        .register-form .btn-primary:hover {
+            background-color: #d99a00;
+        }
+
+    .register-form .text-danger {
+        color: #ff6b6b;
+    }
+
+/* Stylizacja informacji pod formularzem */
+.login-info, .register-info {
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+}
+
+    .login-info a, .register-info a {
+        color: #e6ac00;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        .login-info a:hover, .register-info a:hover {
+            color: #d99a00;
+        }
+
+/* Stylizacja formularza logowania */
+.login-form {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 100%;
+}
+
+    .login-form h2, .login-form hr, .login-form label {
+        color: white;
+    }
+
+    .login-form .form-control {
+        background-color: #2b2b2b;
+        color: white;
+        border: 1px solid #555;
+    }
+
+        .login-form .form-control:focus {
+            background-color: #2b2b2b;
+            color: white;
+            border-color: #e6ac00;
+        }
+
+    .login-form .btn-primary {
+        background-color: #e6ac00;
+        border: none;
+        transition: background-color 0.3s;
+    }
+
+        .login-form .btn-primary:hover {
+            background-color: #d99a00;
+        }
+
+    .login-form .text-danger {
+        color: #ff6b6b;
+    }
+
+/* Stylizacja dla sekcji rejestracji z zewnêtrznych us³ug */
+.external-login-section {
+    color: white;
+}
+
+    .external-login-section a {
+        color: #e6ac00;
+    }
+
+        .external-login-section a:hover {
+            color: #d99a00;
+        }
+
+/* Stylizacja strony potwierdzenia rejestracji */
+.register-confirmation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 40px); /* Ustawiamy wysokoœæ na 100vh minus wysokoœæ stopki */
+    text-align: center;
+    width: 100%;
+    background-color: #3b3b3b;
+}
+
+.register-confirmation-content {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    color: white;
+}
+
+    .register-confirmation-content h2 {
+        color: #e6ac00;
+    }
+
+    .register-confirmation-content a {
+        color: #e6ac00;
+        text-decoration: none;
+    }
+
+        .register-confirmation-content a:hover {
+            color: #d99a00;
+        }
+
+
+/* Stylizacja przycisków */
+.btn-custom {
+    background-color: #e6ac00;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+    .btn-custom:hover {
+        background-color: #3b3b3b;
+        color: white;
+        border: 2px solid #3b3b3b;
+    }
+
+/* Stylizacja przycisków linków */
+.btn-link-custom {
+    color: #e6ac00;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+    .btn-link-custom:hover {
+        color: #d99a00;
+    }
+
+/* Stylizacja kart */
+.card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: #e6ac00;
+    border-bottom: none;
+    color: white;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+}
+
+/* Stylizacja nag³ówków */
+.text-custom {
+    color: white;
+    text-shadow: 0 0 3px #e6ac00, 0 0 5px #ff0000;
+}
+
+/* Stylizacja kontenera szczegó³ów */
+.details-page-container,
+.restaurant-container {
+    position: relative;
+    min-height: 100vh;
+    background-color: #3b3b3b; /* Kolor zapasowy */
+    padding: 20px;
+}
+
+    .details-page-container::before,
+    .restaurant-container::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/img/bekgrond.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        filter: blur(5px) grayscale(0.9) brightness(70%); /* Opcjonalne: rozmycie t³a */
+    }
+
+/* Stylizacja tabeli */
+.table-custom {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.thead-custom {
+    background-color: #e6ac00;
+    color: white;
+}
+
+.table-custom th, .table-custom td {
+    padding: 15px;
+}
+
+.table-custom tbody tr:hover {
+    background-color: #3b3b3b;
+}
+
+/* Stylizacja przycisków w tabeli Akcje */
+.table .btn-link-custom {
+    color: #e6ac00;
+}
+
+    .table .btn-link-custom:hover {
+        color: #d99a00;
+    }
+
+/* Stylizacja formularza wyszukiwania */
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+    .search-form .form-control {
+        flex: 1;
+        margin-right: 10px;
+    }
+
+/* Specyficzne stylizacje dla szczegó³ów */
+.details-btn {
+    background-color: #e6ac00;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+    .details-btn:hover {
+        background-color: #3b3b3b;
+        color: white;
+        border: 2px solid #3b3b3b;
+    }
+
+.details-card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.details-card-header {
+    background-color: #e6ac00;
+    border-bottom: none;
+    color: white;
+}
+
+.details-card-body {
+    padding: 20px;
+}
+
+.details-card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.details-card-text {
+    font-size: 1rem;
+}
+
+.details-text-custom {
+    color: white;
+    text-shadow: 0 0 3px #e6ac00, 0 0 5px #ff0000;
+}
+
+.details-table {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.details-thead {
+    background-color: #e6ac00;
+    color: white;
+}
+
+.details-table th, .details-table td {
+    padding: 15px;
+}
+
+.details-table tbody tr:hover {
+    background-color: #3b3b3b;
 }
