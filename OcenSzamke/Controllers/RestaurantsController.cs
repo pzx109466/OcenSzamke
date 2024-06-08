@@ -100,7 +100,8 @@ public class RestaurantsController : Controller
             RestaurantId = review.RestaurantId,
             Rating = review.Rating,
             Comment = review.Comment,
-            UserId = userId
+            UserId = userId,
+            Author = User.Identity.Name.Split('@')[0] // Przypisanie autora bez części po '@'
         };
 
         _context.Add(newReview);

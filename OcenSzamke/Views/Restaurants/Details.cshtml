@@ -34,6 +34,7 @@
                     <th>Ocena</th>
                     <th>Komentarz</th>
                     <th>Data</th>
+                    <th>Autor</th> <!-- Nowa kolumna dla autora -->
                 </tr>
             </thead>
             <tbody>
@@ -43,6 +44,7 @@
                         <td>@review.Rating</td>
                         <td>@review.Comment</td>
                         <td>@review.DatePosted.ToString("dd-MM-yyyy")</td>
+                        <td>@review.Author</td> <!-- Wyświetlanie autora -->
                     </tr>
                 }
             </tbody>

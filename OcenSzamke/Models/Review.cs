@@ -15,6 +15,7 @@ namespace OcenSzamke.Models
         [ForeignKey("RestaurantId")]
         public virtual Restaurant? Restaurant { get; set; } // Dopuszczenie wartości null
         public IdentityUser User { get; set; } = new IdentityUser(); // Zakładając, że używamy standardowego IdentityUser
+        public string Author { get; set; }
     }
 
 }
