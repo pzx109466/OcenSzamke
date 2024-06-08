@@ -217,4 +217,22 @@ public class RestaurantsController : Controller
         await _context.SaveChangesAsync();
         return RedirectToAction(nameof(Index));
     }
+
+
+
+    // W pliku RestaurantsController.cs
+
+    [HttpGet]
+    public async Task<IActionResult> GetRestaurants(string term)
+    {
+        var restaurantNames = await _context.Restaurants
+                                            .Where(r => r.Name.Contains(term))
+                                            .Select(r => new { label = r.Name })
+                                            .ToListAsync();
+
+        return Json(restaurantNames);
+    }
+
+
+
 }

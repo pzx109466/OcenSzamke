@@ -8,11 +8,10 @@
         <div>
             <a asp-action="Create" class="btn btn-custom">Dodaj Nową Restaurację</a>
         </div>
-
     </div>
 
     <form asp-action="Index" method="get" class="search-form my-2 my-lg-0 mt-3">
-        <input class="form-control mr-sm-2" type="text" name="searchString" placeholder="Szukaj restauracji" aria-label="Search">
+        <input class="form-control mr-sm-2" type="text" id="searchString" name="searchString" placeholder="Szukaj restauracji" aria-label="Search">
         <button class="btn btn-custom my-2 my-sm-0" type="submit">Szukaj</button>
     </form>
 
@@ -50,3 +49,22 @@
         </tbody>
     </table>
 </div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script>
+        $(document).ready(function() {
+            $("#searchString").autocomplete({
+                source: '@Url.Action("GetRestaurants", "Restaurants")',
+                minLength: 2,
+                select: function(event, ui) {
+                    $(this).val(ui.item.label);
+                    return false;
+                }
+            });
+        });
+    </script>
+}
