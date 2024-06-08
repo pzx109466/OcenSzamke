@@ -25,7 +25,13 @@ f) Microsoft.VisualStudio.Web.CodeGeneration.Design
 
 Jeśli ich nie ma, należy je zainstalować poprzez opcję również widoczną na screenie “Przeglądaj”->Wyszukaj->Instaluj
 
-9) W kolejnym kroku potrzebujemy stworzyć nową migrację oraz zaktualizować bazę dancyh, dokładniej w kolejności jak poniżej:
+********************
+**UWAGA**- przed rozpoczęciem jakichkolwiek działań należy
+upewnić się w prawym dolnym rogu Visual Studio, że działamy na
+głównej gałęzi, która nazywa się “master”, tak jak na screenie w dokumentacji technicznej!
+********************
+
+6) W kolejnym kroku potrzebujemy stworzyć nową migrację oraz zaktualizować bazę dancyh, dokładniej w kolejności jak poniżej:
 1-Wybieramy “Narzędzia->Menedżer pakietów NuGet->Konsola menedżera pakietów”
 2-Wpisujemy komendę “Add-Migration TestowaMigracja” i klikamy enter:
 
@@ -44,6 +50,12 @@ Jeśli automatycznie nie przekieruje do przeglądarki to należy w niej wpisać 
 Instrukcja pierwszego uruchomienia - sposób 2
 Jeśli z jakiegoś powodu wystąpiła potrzeba manualnego zainstalowania aplikacji możemy to zrobić bezpośrednio poprzez pobranie pliku .zip projektu przez GitHub’a Aby to zrobić na stronie projektu rozwijamy zielony przycisk Code (https://github.com/pzx109466/OcenSzamke)  i pobieramy plik
 
+********************
+**UWAGA**- przed rozpoczęciem jakichkolwiek kolejnych działań
+należy upewnić się, że pobieramy ZIP z domyślnej wersji branch,
+która nazywa się “master”, tak jak na screenie w dokumentacji technicznej!
+********************
+
 Pobrany plik należy rozpakować w folderze user/source/repos
 
 Przechodzimy przez foldery i uruchamiamy plik OcenSzamke.sln za pomocą Visual Studiio 2022
@@ -60,6 +72,7 @@ e) Microsoft.EntityFrameworkCore.Tools
 f) Microsoft.VisualStudio.Web.CodeGeneration.Design
 
 Jeśli ich nie ma, należy je zainstalować “Przeglądaj”->Wyszukaj->Instaluj
+
 
 Jeśli tą część mamy za sobą konieczne jest jeszcze stworzenie migracji i aktualizacji bazy danych, w tym celu:
 Wybieramy “Narzędzia->Menedżer pakietów NuGet->Konsola menedżera pakietów” i wpisujemy kolejno: 
