@@ -6,10 +6,13 @@
 
 <div class="edit-container">
     <div class="form-container">
-        <form asp-action="Edit">
+        <!-- Dodano asp-controller oraz metodę POST do formularza -->
+        <form asp-action="Edit" asp-controller="Restaurants" method="post">
             <h2 class="text-custom">Edytuj restaurację</h2>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <!-- Dodano ukryte pole dla identyfikatora restauracji -->
+            <input type="hidden" asp-for="RestaurantId" />
             <div class="form-floating mb-3">
                 <input asp-for="Name" class="form-control" placeholder="Nazwa restauracji" />
                 <label asp-for="Name">Nazwa</label>
