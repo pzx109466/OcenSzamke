@@ -20,24 +20,7 @@
                 <label asp-for="Address">Adres</label>
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
-            <!-- Dodane pola atrapy -->
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" placeholder="Numer telefonu" />
-                <label>Numer telefonu</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" placeholder="Typ kuchni" />
-                <label>Typ kuchni</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" placeholder="Godziny otwarcia" />
-                <label>Godziny otwarcia</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" placeholder="Strona internetowa" />
-                <label>Strona internetowa</label>
-            </div>
-            <!-- Koniec dodanych pól atrap -->
+
             <button type="submit" class="btn btn-custom w-100">Dodaj</button>
         </form>
         <a asp-action="Index" class="btn btn-link-custom mt-3">Powrót do Listy</a>
