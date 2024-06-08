@@ -155,17 +155,21 @@ public class RestaurantsController : Controller
     [Authorize]
     public async Task<IActionResult> Edit(int id, [Bind("RestaurantId,Name,Address")] Restaurant restaurant)
     {
-        if (id != restaurant.RestaurantId || restaurant.UserId != _userManager.GetUserId(User))
+        var existingRestaurant = await _context.Restaurants.AsNoTracking().FirstOrDefaultAsync(r => r.RestaurantId == id);
+
+        if (existingRestaurant == null || existingRestaurant.UserId != _userManager.GetUserId(User))
         {
-            return NotFound();  // Sprawdź czy użytkownik jest właścicielem
+            return NotFound();  // Nie znaleziono restauracji lub użytkownik nie jest właścicielem
         }
 
         if (ModelState.IsValid)
         {
             try
             {
+                restaurant.UserId = existingRestaurant.UserId;  // Upewnij się, że UserId nie zostanie zmienione
                 _context.Update(restaurant);
                 await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -178,10 +182,10 @@ public class RestaurantsController : Controller
                     throw;
                 }
             }
-            return RedirectToAction(nameof(Index));
         }
         return View(restaurant);
     }
+
 
     [HttpGet]
     public async Task<IActionResult> Delete(int? id)
