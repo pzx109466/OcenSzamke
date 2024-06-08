@@ -4,33 +4,44 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>Restaurant</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="create-container">
+    <div class="form-container">
         <form asp-action="Create">
+            <h2 class="text-custom">Dodaj Nową Restaurację</h2>
+            <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
+            <div class="form-floating mb-3">
+                <input asp-for="Name" class="form-control" placeholder="Nazwa restauracji" />
+                <label asp-for="Name">Nazwa</label>
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Address" class="control-label"></label>
-                <input asp-for="Address" class="form-control" />
+            <div class="form-floating mb-3">
+                <input asp-for="Address" class="form-control" placeholder="Adres restauracji" />
+                <label asp-for="Address">Adres</label>
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <!-- Dodane pola atrapy -->
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" placeholder="Numer telefonu" />
+                <label>Numer telefonu</label>
             </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" placeholder="Typ kuchni" />
+                <label>Typ kuchni</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" placeholder="Godziny otwarcia" />
+                <label>Godziny otwarcia</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" placeholder="Strona internetowa" />
+                <label>Strona internetowa</label>
+            </div>
+            <!-- Koniec dodanych pól atrap -->
+            <button type="submit" class="btn btn-custom w-100">Dodaj</button>
         </form>
+        <a asp-action="Index" class="btn btn-link-custom mt-3">Powrót do Listy</a>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

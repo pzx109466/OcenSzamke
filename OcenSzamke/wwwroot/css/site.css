@@ -332,30 +332,116 @@ html, body {
         color: #d99a00;
     }
 
-/* Stylizacja kart */
-.card {
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-}
-
-.card-header {
-    background-color: #e6ac00;
-    border-bottom: none;
+/* Stylizacja nag³ówków */
+.text-custom {
     color: white;
+    text-shadow: 0 0 3px #e6ac00, 0 0 5px #ff0000;
 }
 
-.card-body {
+/* Stylizacja kontenera restauracji */
+.restaurant-container {
+    position: relative;
+    min-height: 100vh;
+    background-color: #3b3b3b; /* Kolor zapasowy */
     padding: 20px;
 }
 
-.card-title {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    .restaurant-container::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/img/bekgrond.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        filter: blur(5px) grayscale(0.9) brightness(70%); /* Opcjonalne: rozmycie t³a */
+    }
+
+/* Stylizacja tabeli */
+.table-custom {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-.card-text {
-    font-size: 1rem;
+.thead-custom {
+    background-color: #e6ac00;
+    color: white;
+}
+
+.table-custom th, .table-custom td {
+    padding: 15px;
+}
+
+.table-custom tbody tr:hover {
+    background-color: #3b3b3b;
+    color: white; /* Ustawienie koloru tekstu na bia³y po najechaniu */
+}
+
+    .table-custom tbody tr:hover td {
+        color: white; /* Ustawienie koloru tekstu na bia³y w komórkach po najechaniu */
+    }
+
+/* Stylizacja przycisków w tabeli Akcje */
+.table .btn-link-custom {
+    color: #e6ac00;
+}
+
+    .table .btn-link-custom:hover {
+        color: #d99a00;
+    }
+
+/* Stylizacja formularza wyszukiwania */
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+    .search-form .form-control {
+        flex: 1;
+        margin-right: 10px;
+    }
+
+/* Stylizacja przezroczystego kontenera */
+.transparent-box {
+    background-color: rgba(0, 0, 0, 0.7); /* Lekko przyciemnione, przezroczyste t³o */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Stylizacja kontenera szczegó³ów */
+.details-container {
+    position: relative;
+    min-height: 100vh;
+    background-color: #3b3b3b; /* Kolor zapasowy */
+    padding: 20px;
+}
+
+    .details-container::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/img/bekgrond.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        filter: blur(5px) grayscale(0.9) brightness(70%); /* Opcjonalne: rozmycie t³a */
+    }
+
+/* Stylizacja przezroczystego kontenera */
+.transparent-box {
+    background-color: rgba(0, 0, 0, 0.7); /* Lekko przyciemnione, przezroczyste t³o */
+    padding: 20px;
+    border-radius: 8px;
 }
 
 /* Stylizacja nag³ówków */
@@ -364,8 +450,107 @@ html, body {
     text-shadow: 0 0 3px #e6ac00, 0 0 5px #ff0000;
 }
 
-/* Stylizacja kontenera szczegó³ów */
-.details-page-container,
+/* Stylizacja tabeli */
+.table-custom {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.thead-custom {
+    background-color: #e6ac00;
+    color: white;
+}
+
+.table-custom th, .table-custom td {
+    padding: 15px;
+}
+
+.table-custom tbody tr:hover {
+    background-color: #3b3b3b;
+    color: white; /* Ustawienie koloru tekstu na bia³y po najechaniu */
+}
+
+    .table-custom tbody tr:hover td {
+        color: white; /* Ustawienie koloru tekstu na bia³y w komórkach po najechaniu */
+    }
+
+/* Stylizacja kontenera formularza */
+.create-container {
+    position: relative;
+    min-height: 100vh;
+    background-color: transparent;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .create-container::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/img/bekgrond.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        filter: blur(5px) grayscale(0.9) brightness(70%);
+    }
+
+/* Stylizacja formularza */
+.form-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px; /* Zwiêkszone padding */
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px; /* Zwiêkszony max-width */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Stylizacja przycisków */
+.btn-custom {
+    background-color: #e6ac00;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+    .btn-custom:hover {
+        background-color: #3b3b3b;
+        color: white;
+        border: 2px solid #3b3b3b;
+    }
+
+/* Stylizacja przycisków linków */
+.btn-link-custom {
+    color: #e6ac00;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+    .btn-link-custom:hover {
+        color: #d99a00;
+    }
+
+/* Stylizacja nag³ówków */
+.text-custom {
+    color: white;
+    text-shadow: 0 0 3px #e6ac00, 0 0 5px #ff0000;
+}
+
+/* Stylizacja kontenera restauracji */
 .restaurant-container {
     position: relative;
     min-height: 100vh;
@@ -373,7 +558,6 @@ html, body {
     padding: 20px;
 }
 
-    .details-page-container::before,
     .restaurant-container::before {
         content: "";
         position: fixed;
@@ -430,8 +614,107 @@ html, body {
         margin-right: 10px;
     }
 
-/* Specyficzne stylizacje dla szczegó³ów */
-.details-btn {
+/* Stylizacja kontenera szczegó³ów */
+.details-container {
+    position: relative;
+    min-height: 100vh;
+    background-color: #3b3b3b; /* Kolor zapasowy */
+    padding: 20px;
+}
+
+    .details-container::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/img/bekgrond.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        filter: blur(5px) grayscale(0.9) brightness(70%); /* Opcjonalne: rozmycie t³a */
+    }
+
+/* Stylizacja przezroczystego kontenera */
+.transparent-box {
+    background-color: rgba(0, 0, 0, 0.7); /* Lekko przyciemnione, przezroczyste t³o */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Stylizacja nag³ówków */
+.text-custom {
+    color: white;
+    text-shadow: 0 0 3px #e6ac00, 0 0 5px #ff0000;
+}
+
+/* Stylizacja tabeli */
+.table-custom {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.thead-custom {
+    background-color: #e6ac00;
+    color: white;
+}
+
+.table-custom th, .table-custom td {
+    padding: 15px;
+}
+
+.table-custom tbody tr:hover {
+    background-color: #3b3b3b;
+    color: white; /* Ustawienie koloru tekstu na bia³y po najechaniu */
+}
+
+    .table-custom tbody tr:hover td {
+        color: white; /* Ustawienie koloru tekstu na bia³y w komórkach po najechaniu */
+    }
+
+
+/* Stylizacja kontenera formularza */
+.create-container {
+    position: relative;
+    min-height: 100vh;
+    background-color: transparent;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .create-container::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/img/bekgrond.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        filter: blur(5px) grayscale(0.9) brightness(70%);
+    }
+
+/* Stylizacja formularza */
+.form-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px; /* Zwiêkszone padding */
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px; /* Zwiêkszony max-width */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Stylizacja przycisków */
+.btn-custom {
     background-color: #e6ac00;
     border: none;
     color: white;
@@ -440,63 +723,424 @@ html, body {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 5px;
+    margin: 5px 0;
     transition-duration: 0.4s;
     cursor: pointer;
 }
 
-    .details-btn:hover {
+    .btn-custom:hover {
         background-color: #3b3b3b;
         color: white;
         border: 2px solid #3b3b3b;
     }
 
-.details-card {
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
+/* Stylizacja linków */
+.btn-link-custom {
+    color: #e6ac00;
+    text-decoration: none;
 }
 
-.details-card-header {
-    background-color: #e6ac00;
-    border-bottom: none;
-    color: white;
-}
+    .btn-link-custom:hover {
+        color: #d99a00;
+    }
 
-.details-card-body {
-    padding: 20px;
-}
-
-.details-card-title {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.details-card-text {
-    font-size: 1rem;
-}
-
-.details-text-custom {
+/* Stylizacja nag³ówków */
+.text-custom {
     color: white;
     text-shadow: 0 0 3px #e6ac00, 0 0 5px #ff0000;
 }
 
-.details-table {
+/* Stylizacja formularza z p³ywaj¹cymi etykietami */
+.form-floating .form-control {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-bottom: 2px solid #e6ac00;
+    border-radius: 0;
+    padding: 1.5rem 0.75rem 0.75rem 0.75rem;
+}
+
+    .form-floating .form-control:focus {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        border-color: #d99a00;
+    }
+
+.form-floating label {
+    color: #e6ac00;
+}
+
+.form-floating .form-control:focus ~ label {
+    color: #d99a00;
+}
+
+.text-danger {
+    color: #ff0000 !important;
+}
+
+
+/* Stylizacja kontenera formularza */
+.edit-container {
+    position: relative;
+    min-height: 100vh;
+    background-color: transparent;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .edit-container::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/img/bekgrond.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        filter: blur(5px) grayscale(0.9) brightness(70%);
+    }
+
+/* Stylizacja formularza */
+.form-container {
     background-color: rgba(0, 0, 0, 0.7);
-    color: white;
+    padding: 40px; /* Zwiêkszone padding */
     border-radius: 8px;
-    overflow: hidden;
+    width: 100%;
+    max-width: 500px; /* Zwiêkszony max-width */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.details-thead {
+/* Stylizacja przycisków */
+.btn-custom {
     background-color: #e6ac00;
+    border: none;
     color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px 0;
+    transition-duration: 0.4s;
+    cursor: pointer;
 }
 
-.details-table th, .details-table td {
-    padding: 15px;
+    .btn-custom:hover {
+        background-color: #3b3b3b;
+        color: white;
+        border: 2px solid #3b3b3b;
+    }
+
+/* Stylizacja linków */
+.btn-link-custom {
+    color: #e6ac00;
+    text-decoration: none;
 }
 
-.details-table tbody tr:hover {
-    background-color: #3b3b3b;
+    .btn-link-custom:hover {
+        color: #d99a00;
+    }
+
+/* Stylizacja nag³ówków */
+.text-custom {
+    color: white;
+    text-shadow: 0 0 3px #e6ac00, 0 0 5px #ff0000;
+}
+
+/* Stylizacja formularza z p³ywaj¹cymi etykietami */
+.form-floating .form-control {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-bottom: 2px solid #e6ac00;
+    border-radius: 0;
+    padding: 1.5rem 0.75rem 0.75rem 0.75rem;
+}
+
+    .form-floating .form-control:focus {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        border-color: #d99a00;
+    }
+
+.form-floating label {
+    color: #e6ac00;
+}
+
+.form-floating .form-control:focus ~ label {
+    color: #d99a00;
+}
+
+.text-danger {
+    color: #ff0000 !important;
+}
+
+/* Stylizacja kontenera formularza */
+.delete-container {
+    position: relative;
+    min-height: 100vh;
+    background-color: transparent;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .delete-container::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/img/bekgrond.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        filter: blur(5px) grayscale(0.9) brightness(70%);
+    }
+
+/* Stylizacja formularza */
+.form-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px; /* Zwiêkszone padding */
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px; /* Zwiêkszony max-width */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Stylizacja przycisków */
+.btn-success {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px 0;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    width: 100%; /* Pe³na szerokoœæ */
+}
+
+    .btn-success:hover {
+        background-color: #45a049;
+        color: white;
+        border: 2px solid #45a049;
+    }
+
+.btn-danger {
+    background-color: #ff0000;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px 0;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    width: 100%; /* Pe³na szerokoœæ */
+}
+
+    .btn-danger:hover {
+        background-color: #cc0000;
+        color: white;
+        border: 2px solid #cc0000;
+    }
+
+/* Stylizacja nag³ówków */
+.text-custom {
+    color: white;
+    text-shadow: 0 0 3px #e6ac00, 0 0 5px #ff0000;
+}
+
+/* Stylizacja tekstu */
+.text-danger {
+    color: #ff0000 !important;
+}
+
+/* Stylizacja kontenera formularza */
+.review-container {
+    position: relative;
+    min-height: 100vh;
+    background-color: transparent;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .review-container::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/img/bekgrond.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        filter: blur(5px) grayscale(0.9) brightness(70%);
+    }
+
+/* Stylizacja formularza */
+.review-form-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px; /* Zwiêkszone padding */
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px; /* Zwiêkszony max-width */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Stylizacja przycisków */
+.review-btn-custom {
+    background-color: #e6ac00;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px 0;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    width: 100%; /* Pe³na szerokoœæ */
+}
+
+    .review-btn-custom:hover {
+        background-color: #3b3b3b;
+        color: white;
+        border: 2px solid #3b3b3b;
+    }
+
+/* Stylizacja nag³ówków */
+.review-text-custom {
+    color: white;
+    text-shadow: 0 0 3px #e6ac00, 0 0 5px #ff0000;
+}
+
+/* Stylizacja formularza z p³ywaj¹cymi etykietami */
+.form-floating .form-control.review-select {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-bottom: 2px solid #e6ac00;
+    border-radius: 0;
+    padding: 1.5rem 0.75rem 0.75rem 0.75rem;
+}
+
+    .form-floating .form-control.review-select:focus {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        border-color: #d99a00;
+    }
+
+.form-floating label {
+    color: #e6ac00;
+}
+
+.form-floating .form-control.review-select:focus ~ label {
+    color: #d99a00;
+}
+
+.form-floating .form-control.review-textarea {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-bottom: 2px solid #e6ac00;
+    border-radius: 0;
+    padding: 1.5rem 0.75rem 0.75rem 0.75rem;
+}
+
+    .form-floating .form-control.review-textarea:focus {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        border-color: #d99a00;
+    }
+
+        .form-floating .form-control.review-textarea:focus ~ label {
+            color: #d99a00;
+        }
+
+.text-danger {
+    color: #ff0000 !important;
+}
+
+/* Stylizacja kontenera polityki prywatnoœci */
+.privacy-container {
+    position: relative;
+    min-height: 100vh;
+    background-color: transparent;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+    .privacy-container::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/img/bekgrond.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        filter: blur(5px) grayscale(0.9) brightness(70%);
+    }
+
+/* Stylizacja treœci polityki prywatnoœci */
+.privacy-content {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.privacy-title {
+    color: white;
+    text-shadow: 0 0 3px #e6ac00, 0 0 5px #ff0000;
+    margin-bottom: 20px;
+}
+
+.privacy-text {
+    color: white;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Stylizacja obrazu polityki prywatnoœci */
+.privacy-image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.privacy-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }

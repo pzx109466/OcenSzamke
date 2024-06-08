@@ -1,25 +1,35 @@
 ﻿@model OcenSzamke.Models.ReviewViewModel
 
-<h2>Dodaj recenzję dla @Model.RestaurantName</h2>
+<div class="review-container">
+    <div class="review-form-container">
+        <form asp-action="CreateReview" method="post">
+            <h2 class="review-text-custom">Dodaj recenzję dla @Model.RestaurantName</h2>
+            <hr />
+            <input type="hidden" asp-for="RestaurantId" />
+            <div class="form-floating mb-3">
+                <select asp-for="Rating" class="form-control review-select" id="reviewRatingSelect">
+                    <option value="">Wybierz ocenę</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <label for="reviewRatingSelect">Ocena</label>
+                <span asp-validation-for="Rating" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea asp-for="Comment" class="form-control review-textarea" placeholder="Komentarz" id="reviewCommentTextarea"></textarea>
+                <label for="reviewCommentTextarea">Komentarz</label>
+                <span asp-validation-for="Comment" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn review-btn-custom w-100">Dodaj recenzję</button>
+        </form>
+    </div>
+</div>
 
-<form asp-action="CreateReview" method="post">
-    <input type="hidden" asp-for="RestaurantId" />
-    <div class="form-group">
-        <label asp-for="Rating">Ocena</label>
-        <select asp-for="Rating" class="form-control">
-            <option value="">Wybierz ocenę</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-        <span asp-validation-for="Rating" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Comment">Komentarz</label>
-        <textarea asp-for="Comment" class="form-control"></textarea>
-        <span asp-validation-for="Comment" class="text-danger"></span>
-    </div>
-    <button type="submit" class="btn btn-primary">Dodaj recenzję</button>
-</form>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
