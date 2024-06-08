@@ -361,3 +361,9 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/OcenSzamke/Migrations/20240607234515_TESTT.cs
+/OcenSzamke/Migrations/20240607234515_TESTT.Designer.cs
+/OcenSzamke/Migrations/20240608093130_usernamee.cs
+/OcenSzamke/Migrations/20240608093130_usernamee.Designer.cs
+/OcenSzamke/Migrations/AppDbContextModelSnapshot.cs
+/.gitignore
