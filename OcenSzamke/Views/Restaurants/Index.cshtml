@@ -8,19 +8,7 @@
         <div>
             <a asp-action="Create" class="btn btn-custom">Dodaj Nową Restaurację</a>
         </div>
-        <div>
-            @if (User?.Identity?.IsAuthenticated == true)
-            {
-                <form method="post" asp-area="Identity" asp-page="/Account/Logout" asp-handler="Logout" asp-route-returnUrl="/">
-                    <button type="submit" class="btn btn-custom">Wyloguj</button>
-                </form>
-            }
-            else
-            {
-                <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-custom">Zaloguj się</a>
-                <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-custom">Zarejestruj się</a>
-            }
-        </div>
+
     </div>
 
     <form asp-action="Index" method="get" class="search-form my-2 my-lg-0 mt-3">
